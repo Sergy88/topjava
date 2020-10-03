@@ -1,19 +1,23 @@
+button{
+    margin:20px;
+}
+
 table {
-    width: 100%; /* Ширина таблицы */
-    border: 4px double black; /* Рамка вокруг таблицы */
-    border-collapse: collapse; /* Отображать только одинарные линии */
+    width: 100%; /* width of table */
+    border: 4px double black; /* frame over table*/
+    border-collapse: collapse; /* show as single lines */
 }
 
 th {
-    text-align: left; /* Выравнивание по левому краю */
-    background: #ccc; /* Цвет фона ячеек */
-    padding: 5px; /* Поля вокруг содержимого ячеек */
-    border: 1px solid black; /* Граница вокруг ячеек */
+    text-align: left; /* aligning to the left*/
+    background: #ccc; /* color of cells */
+    padding: 5px; /* fields around content */
+    border: 1px solid black; /* border around cells */
 }
 
 td {
-    padding: 5px; /* Поля вокруг содержимого ячеек */
-    border: 1px solid black; /* Граница вокруг ячеек */
+    padding: 5px; /* fields around contents */
+    border: 1px solid black; /* border around cells*/
 }
 #redTd {
     color: red;
@@ -21,3 +25,4 @@ td {
 #greenTd {
     color: green
 }
+

@@ -20,24 +20,22 @@
     <tr>
         <th>Описание</th>
         <th>Дата</th>
-        <th>Каллори</th>
-        <th>Превышение</th>
+        <th>Калории</th>
         <th colspan="2">Действия</th>
     </tr>
 
-        <c:forEach var="meal" items="${mealsAttrubute}">
-            <jsp:useBean id="meal"  type="ru.javawebinar.topjava.model.MealTo" />
-            <tr id="${meal.excess?"redTd":"greenTd"}">
-                <td>${meal.description}</td>
-                <fmt:parseDate var="parsedDate" value="${meal.dateTime}" pattern="yyyy-MM-dd'T'HH:mm"/>
-                <fmt:formatDate var="formattedDate" value="${parsedDate}" pattern="yyyy-MM-dd HH:mm"/>
-                <td>${formattedDate}</td>
-                <td>${meal.calories}</td>
-                <td>${meal.excess?"да":"нет"}</td>
-                <td><a href="meals?id=${meal.id}&action=update">Обновить</a></td>
-                <td><a href="meals?id=${meal.id}&action=delete">Удалить</a></td>
-            </tr>
-        </c:forEach>
+    <c:forEach var="meal" items="${mealsAttrubute}">
+        <jsp:useBean id="meal" type="ru.javawebinar.topjava.model.MealTo"/>
+        <tr id="${meal.excess?"redTd":"greenTd"}">
+            <td>${meal.description}</td>
+            <fmt:parseDate var="parsedDate" value="${meal.dateTime}" pattern="yyyy-MM-dd'T'HH:mm"/>
+            <fmt:formatDate var="formattedDate" value="${parsedDate}" pattern="yyyy-MM-dd HH:mm"/>
+            <td>${formattedDate}</td>
+            <td>${meal.calories}</td>
+            <td><a href="meals?id=${meal.id}&action=update">Обновить</a></td>
+            <td><a href="meals?id=${meal.id}&action=delete">Удалить</a></td>
+        </tr>
+    </c:forEach>
 
 </table>
 

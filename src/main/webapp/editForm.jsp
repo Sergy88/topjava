@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: mrser
-  Date: 02.10.2020
-  Time: 14:31
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
@@ -24,11 +17,9 @@
     <label>Описание</label>
     <input name="description" type="text" value="${meal.description}">
     <label>Калории</label>
-    <input name="cal" type="text" value="${meal.calories}"/>
+    <input name="cal" type="number" value="${meal.calories}"/>
     <input type="hidden" name="id" value="${meal.id}"/>
-    <button type="submit">Подвтердить</button>
+    <button type="submit">Подтвердить</button>
 </form>
-
-
 </body>
 </html>

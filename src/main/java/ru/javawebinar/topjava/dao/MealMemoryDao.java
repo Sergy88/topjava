@@ -1,4 +1,4 @@
-package ru.javawebinar.topjava.DAO;
+package ru.javawebinar.topjava.dao;
 
 import org.slf4j.Logger;
 import ru.javawebinar.topjava.model.Meal;
@@ -14,7 +14,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 public class MealMemoryDao implements BasicMealCrud {
     private static final Logger log = getLogger(MealMemoryDao.class);
-    private static AtomicInteger counter = new AtomicInteger(0);
+    private AtomicInteger counter = new AtomicInteger(0);
     private Map<Integer, Meal> mealsRepo = new ConcurrentHashMap<>();
 
     {
@@ -36,7 +36,6 @@ public class MealMemoryDao implements BasicMealCrud {
 
     @Override
     public Meal create(Meal meal) {
-        log.debug("create meal {}", meal);
         if (meal.isNew()) {
             log.debug("create meal {}", meal);
             meal.setId(counter.incrementAndGet());
@@ -46,14 +45,12 @@ public class MealMemoryDao implements BasicMealCrud {
     }
 
     public List<Meal> getAll() {
-        log.debug("get all meals from dao");
-        List<Meal> mealsAll = new ArrayList<>(mealsRepo.values());
-        return mealsAll;
+        log.debug("get all meals from repo");
+        return new ArrayList<>(mealsRepo.values());
     }
 
     public Meal getById(int mealId) {
-        log.debug("getMealbyId{}", mealId);
+        log.debug("get particular meal by Id{}", mealId);
         return mealsRepo.get(mealId);
     }
-
 }

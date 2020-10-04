@@ -1,7 +1,9 @@
 button{
     margin:20px;
 }
-
+a{
+    margin:20px;
+}
 table {
     width: 100%; /* width of table */
     border: 4px double black; /* frame over table*/

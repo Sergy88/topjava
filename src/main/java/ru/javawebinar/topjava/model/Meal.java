@@ -3,11 +3,12 @@ package ru.javawebinar.topjava.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 public class Meal {
 
     private int id;
-    private LocalDateTime dateTime = LocalDateTime.now().withSecond(0).withNano(0);
+    private LocalDateTime dateTime = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
     private String description;
     private int calories;
 
@@ -18,6 +19,13 @@ public class Meal {
     }
 
     public Meal() {
+    }
+
+    public Meal(int id, String description, String dateTime, String calories) {
+        this.id = id;
+        this.description = description;
+        this.dateTime = LocalDateTime.parse(dateTime);
+        this.calories = Integer.parseInt(calories);
     }
 
     public LocalDateTime getDateTime() {
@@ -59,7 +67,18 @@ public class Meal {
     public void setCalories(int calories) {
         this.calories = calories;
     }
-    public boolean isNew(){
-        return id==0;
+
+    public boolean isNew() {
+        return id == 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "id=" + id +
+                ", dateTime=" + dateTime +
+                ", description='" + description + '\'' +
+                ", calories=" + calories +
+                '}';
     }
 }

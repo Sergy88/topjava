@@ -6,7 +6,6 @@ import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
 public class Meal {
-
     private int id;
     private LocalDateTime dateTime = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
     private String description;
@@ -21,11 +20,11 @@ public class Meal {
     public Meal() {
     }
 
-    public Meal(int id, String description, String dateTime, String calories) {
+    public Meal(int id, String description, LocalDateTime dateTime, int calories) {
         this.id = id;
         this.description = description;
-        this.dateTime = LocalDateTime.parse(dateTime);
-        this.calories = Integer.parseInt(calories);
+        this.dateTime = dateTime;
+        this.calories = calories;
     }
 
     public LocalDateTime getDateTime() {

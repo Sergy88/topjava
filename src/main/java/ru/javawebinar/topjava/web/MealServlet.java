@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 
 public class MealServlet extends HttpServlet {
-    private static BasicMealCrud mealDao;
+    private BasicMealCrud mealDao;
     private static final Logger log = getLogger(MealServlet.class);
 
     @Override
@@ -48,6 +49,9 @@ public class MealServlet extends HttpServlet {
                     log.debug("forward to edit form");
                     req.getRequestDispatcher("/editForm.jsp").forward(req, resp);
                     break;
+                default:
+                    log.debug("not valid action parameter... redirect to meals");
+                    resp.sendRedirect("meals");
             }
         } else {
             log.debug("no action parameters found... getting TO`s and forwarding to /meals.jsp");
@@ -69,8 +73,8 @@ public class MealServlet extends HttpServlet {
             req.setCharacterEncoding("utf-8");
             Meal meal = new Meal(getIdFromRequest(req),
                     req.getParameter("description"),
-                    req.getParameter("dateTime"),
-                    req.getParameter("cal"));
+                    LocalDateTime.parse(req.getParameter("dateTime")),
+                    Integer.parseInt(req.getParameter("cal")));
             log.debug("meal obj created {}", meal);
             if (meal.isNew()) {
                 log.debug("meal is new - calling create method");
@@ -86,5 +90,4 @@ public class MealServlet extends HttpServlet {
     private static int getIdFromRequest(HttpServletRequest req) {
         return Integer.parseInt(req.getParameter("id"));
     }
-
 }

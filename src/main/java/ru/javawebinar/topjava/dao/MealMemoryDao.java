@@ -28,9 +28,10 @@ public class MealMemoryDao implements BasicMealCrud {
 
     public Meal update(Meal meal) {
         log.debug("update meal {}", meal);
-        if (!meal.isNew() && mealsRepo.keySet().contains(meal.getId())) { //check food exists
-            mealsRepo.put(meal.getId(), meal);
-            return meal;
+        if (!meal.isNew()) {
+            if (mealsRepo.replace(meal.getId(), meal) != null) {
+                return meal;
+            }
         }
         return null;
     }

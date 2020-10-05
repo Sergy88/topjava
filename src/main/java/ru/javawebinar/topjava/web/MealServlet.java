@@ -64,16 +64,16 @@ public class MealServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
         log.debug("at doPost method");
         if (req.getParameter("id") == null) {
             log.debug("parameter id is absent - forward to edit form");
             req.getRequestDispatcher("/editForm.jsp").forward(req, resp);
         } else {
             log.debug("parameter id is present - creating meal object");
-            req.setCharacterEncoding("utf-8");
             Meal meal = new Meal(getIdFromRequest(req),
-                    req.getParameter("description"),
                     LocalDateTime.parse(req.getParameter("dateTime")),
+                    req.getParameter("description"),
                     Integer.parseInt(req.getParameter("cal")));
             log.debug("meal obj created {}", meal);
             if (meal.isNew()) {

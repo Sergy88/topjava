@@ -12,14 +12,22 @@
 <h1>Редактирование: ${meal.description} ${formattedDate}</h1>
 <form action="meals" method="post">
     <p>Заполните новые данные:</p>
+    <p>
     <label>Дата</label>
     <input name="dateTime" type="datetime-local" value="${meal.dateTime}">
+    </p>
+    <p>
     <label>Описание</label>
     <input name="description" type="text" value="${meal.description}">
+    </p>
+    <p>
     <label>Калории</label>
     <input name="cal" type="number" value="${meal.calories}"/>
+    </p>
     <input type="hidden" name="id" value="${meal.id}"/>
     <button type="submit">Подтвердить</button>
+    <button onclick="window.history.back()" type="button">
+        Отмена</button>
 </form>
 </body>
 </html>

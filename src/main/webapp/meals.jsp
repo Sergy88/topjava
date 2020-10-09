@@ -49,6 +49,22 @@
             </tr>
         </c:forEach>
     </table>
+    <div>Фильтр</div>
+    <form action="meals" method="post">
+        <dl>
+            <dt>Начальная дата:</dt>
+            <dd><input type="date" name="startDate" value="<%= request.getParameter("startDate")%>"/></dd>
+            <dt>Конечная дата:</dt>
+            <dd><input type="date" name="endDate" value="<%= request.getParameter("endDate")%>"/></dd>
+        </dl>
+        <dl>
+            <dt>Начальное время:</dt>
+            <dd><input type="time" name="startTime" value="<%= request.getParameter("startTime")%>"/></dd>
+            <dt>Конечное время:</dt>
+            <dd><input type="time" name="endTime" value="<%= request.getParameter("endTime")%>"/></dd>
+        </dl>
+        <button type="submit">Фильтровать</button>
+    </form>
 </section>
 </body>
 </html>

@@ -7,6 +7,20 @@
 <head>
     <title>Meal list</title>
     <style>
+        .form-inline {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        dt {
+            margin: 15px;
+        }
+
+        dl {
+            margin: 15px;
+        }
+
         .normal {
             color: green;
         }
@@ -50,19 +64,21 @@
         </c:forEach>
     </table>
     <div>Фильтр</div>
-    <form action="meals" method="post">
-        <dl>
-            <dt>Начальная дата:</dt>
-            <dd><input type="date" name="startDate" value="<%= request.getParameter("startDate")%>"/></dd>
-            <dt>Конечная дата:</dt>
-            <dd><input type="date" name="endDate" value="<%= request.getParameter("endDate")%>"/></dd>
-        </dl>
-        <dl>
-            <dt>Начальное время:</dt>
-            <dd><input type="time" name="startTime" value="<%= request.getParameter("startTime")%>"/></dd>
-            <dt>Конечное время:</dt>
-            <dd><input type="time" name="endTime" value="<%= request.getParameter("endTime")%>"/></dd>
-        </dl>
+    <form action="meals">
+        <div class="form-inline">
+            <dl>
+                <dt>Начальная дата:</dt>
+                <dd><input type="date" name="startDate" value="<%= request.getParameter("startDate")%>"/></dd>
+                <dt>Конечная дата:</dt>
+                <dd><input type="date" name="endDate" value="<%= request.getParameter("endDate")%>"/></dd>
+            </dl>
+            <dl>
+                <dt>Начальное время:</dt>
+                <dd><input type="time" name="startTime" value="<%= request.getParameter("startTime")%>"/></dd>
+                <dt>Конечное время:</dt>
+                <dd><input type="time" name="endTime" value="<%= request.getParameter("endTime")%>"/></dd>
+            </dl>
+        </div>
         <button type="submit">Фильтровать</button>
     </form>
 </section>

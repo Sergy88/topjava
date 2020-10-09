@@ -34,31 +34,21 @@ public class MealServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
-        if (id != null) {
-            Meal meal = new Meal(id.isEmpty() ? null : Integer.valueOf(id),
-                    LocalDateTime.parse(request.getParameter("dateTime")),
-                    request.getParameter("description"),
-                    Integer.parseInt(request.getParameter("calories")));
-            if (meal.isNew()) {
-                log.info("Create {}", meal);
-                mealRestController.create(meal);
-            } else {
-                log.info("Update {}", meal);
-                mealRestController.update(meal);
-            }
-            response.sendRedirect("meals");
+        Meal meal = new Meal(id.isEmpty() ? null : Integer.valueOf(id),
+                LocalDateTime.parse(request.getParameter("dateTime")),
+                request.getParameter("description"),
+                Integer.parseInt(request.getParameter("calories")));
+        if (meal.isNew()) {
+            log.info("Create {}", meal);
+            mealRestController.create(meal);
         } else {
-            log.debug("do post (no id param -> filter)");
-            request.setAttribute("meals",
-                    getFilteredTosByParams(request.getParameter("startDate"),
-                            request.getParameter("startTime"),
-                            request.getParameter("endDate"),
-                            request.getParameter("endTime")));
-            request.getRequestDispatcher("meals.jsp").forward(request, response);
+            log.info("Update {}", meal);
+            mealRestController.update(meal);
         }
+        response.sendRedirect("meals");
     }
 
     @Override
@@ -84,17 +74,20 @@ public class MealServlet extends HttpServlet {
             default:
                 log.info("getAll");
                 request.setAttribute("meals",
-                        mealRestController.getAll());
+                        getFilteredTosByParams(request.getParameter("startDate"),
+                                request.getParameter("startTime"),
+                                request.getParameter("endDate"),
+                                request.getParameter("endTime")));
                 request.getRequestDispatcher("/meals.jsp").forward(request, response);
                 break;
         }
     }
 
     private List<MealTo> getFilteredTosByParams(String startDate, String startTime, String endDate, String endTime) {
-        LocalDate startLocalDate = !startDate.equals("") ? LocalDate.parse(startDate) : LocalDate.MIN;
-        LocalDate endLocalDate = !endDate.equals("")  ? LocalDate.parse(startDate) : LocalDate.MAX;
-        LocalTime startLocalTime = !startTime.equals("")  ? LocalTime.parse(startTime) : LocalTime.MIN;
-        LocalTime endLocalTime = !endTime.equals("")  ? LocalTime.parse(endTime) : LocalTime.MAX;
+        LocalDate startLocalDate = startDate == null ? LocalDate.MIN : !startDate.equals("") ? LocalDate.parse(startDate) : LocalDate.MIN;
+        LocalDate endLocalDate = endDate == null ? LocalDate.MAX : !endDate.equals("") ? LocalDate.parse(endDate) : LocalDate.MAX;
+        LocalTime startLocalTime = startTime == null ? LocalTime.MIN : !startTime.equals("") ? LocalTime.parse(startTime) : LocalTime.MIN;
+        LocalTime endLocalTime = endTime == null ? LocalTime.MAX : !endTime.equals("") ? LocalTime.parse(endTime) : LocalTime.MAX;
         return mealRestController.getAllFiltered(startLocalDate, startLocalTime, endLocalDate, endLocalTime);
     }
 

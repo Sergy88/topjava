@@ -26,13 +26,4 @@
         <url-pattern>/meals</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>loginServlet</servlet-name>
-        <servlet-class>ru.javawebinar.topjava.web.LogInServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>loginServlet</servlet-name>
-        <url-pattern></url-pattern>
-    </servlet-mapping>
-
 </web-app>

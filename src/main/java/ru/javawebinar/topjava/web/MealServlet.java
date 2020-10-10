@@ -23,13 +23,14 @@ import java.util.Objects;
 
 public class MealServlet extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(MealServlet.class);
-    ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml");
+    private ConfigurableApplicationContext appCtx;
 
     private MealRestController mealRestController;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml");
         mealRestController = appCtx.getBean(MealRestController.class);
     }
 
@@ -46,7 +47,7 @@ public class MealServlet extends HttpServlet {
             mealRestController.create(meal);
         } else {
             log.info("Update {}", meal);
-            mealRestController.update(meal);
+            mealRestController.update(meal, Integer.valueOf(id));
         }
         response.sendRedirect("meals");
     }
@@ -84,10 +85,10 @@ public class MealServlet extends HttpServlet {
     }
 
     private List<MealTo> getFilteredTosByParams(String startDate, String startTime, String endDate, String endTime) {
-        LocalDate startLocalDate = startDate == null ? LocalDate.MIN : !startDate.equals("") ? LocalDate.parse(startDate) : LocalDate.MIN;
-        LocalDate endLocalDate = endDate == null ? LocalDate.MAX : !endDate.equals("") ? LocalDate.parse(endDate) : LocalDate.MAX;
-        LocalTime startLocalTime = startTime == null ? LocalTime.MIN : !startTime.equals("") ? LocalTime.parse(startTime) : LocalTime.MIN;
-        LocalTime endLocalTime = endTime == null ? LocalTime.MAX : !endTime.equals("") ? LocalTime.parse(endTime) : LocalTime.MAX;
+        LocalDate startLocalDate = startDate == null ? null : startDate.equals("") ? null : LocalDate.parse(startDate);
+        LocalDate endLocalDate = endDate == null ? null : endDate.equals("") ? null : LocalDate.parse(endDate);
+        LocalTime startLocalTime = startTime == null ? null : startTime.equals("") ? null : LocalTime.parse(startTime);
+        LocalTime endLocalTime = endTime == null ? null : endTime.equals("") ? null : LocalTime.parse(endTime);
         return mealRestController.getAllFiltered(startLocalDate, startLocalTime, endLocalDate, endLocalTime);
     }
 

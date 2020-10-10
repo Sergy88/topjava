@@ -8,7 +8,10 @@ import ru.javawebinar.topjava.util.MealsUtil;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -19,11 +22,12 @@ public class InMemoryMealRepository implements MealRepository {
     private final AtomicInteger counter = new AtomicInteger(0);
 
     {
-        MealsUtil.meals.forEach(this::initValues);
+        MealsUtil.meals.forEach(meal -> initValues(meal, 1));
+        MealsUtil.meals1.forEach(meal -> initValues(meal, 2));
     }
 
-    private void initValues(Meal meal) {
-        this.save(meal, 1);
+    private void initValues(Meal meal, int userId) {
+        this.save(meal, userId);
     }
 
     @Override
@@ -52,10 +56,9 @@ public class InMemoryMealRepository implements MealRepository {
     }
 
     @Override
-    public List<Meal> getAll(Integer userId) {
+    public List<Meal> getAll(int userId) {
         Map<Integer, Meal> personalRepo = repository.getOrDefault(userId, new HashMap<>());
-        ArrayList<Meal> meals = new ArrayList(personalRepo.values());
-        return meals.stream()
+        return personalRepo.values().stream()
                 .sorted(Comparator.comparing(Meal::getDateTime).reversed())
                 .collect(Collectors.toList());
     }
@@ -64,8 +67,8 @@ public class InMemoryMealRepository implements MealRepository {
     public List<Meal> getAllFiltered(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime, Integer userId) {
         List<Meal> meals = getAll(userId);
         List<Meal> result = meals.stream()
-                .filter(meal -> DateTimeUtil.isBetweenHalfOpen(meal.getDateTime().toLocalDate(), startDate, endDate))
-                .filter(meal -> DateTimeUtil.isBetweenHalfOpen(meal.getDateTime().toLocalTime(), startTime, endTime))
+                .filter(meal -> DateTimeUtil.isBetweenClosed(meal.getDateTime().toLocalDate(), startDate, endDate))
+                .filter(meal -> DateTimeUtil.isBetweenClosed(meal.getDateTime().toLocalTime(), startTime, endTime))
                 .sorted(Comparator.comparing(Meal::getDateTime).reversed())
                 .collect(Collectors.toList());
 

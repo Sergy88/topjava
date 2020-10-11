@@ -19,7 +19,7 @@ import static ru.javawebinar.topjava.util.ValidationUtil.checkNew;
 @Controller
 public class MealRestController {
     private MealService service;
-    protected final Logger log = LoggerFactory.getLogger(getClass());
+    protected final static Logger log = LoggerFactory.getLogger(MealRestController.class);
 
     public MealRestController(MealService service) {
         this.service = service;
@@ -27,17 +27,16 @@ public class MealRestController {
 
     public List<MealTo> getAll() {
         log.debug("getAll");
-        return MealsUtil.getTos(service.getAll(SecurityUtil.authUserId()), MealsUtil.DEFAULT_CALORIES_PER_DAY);
+        return MealsUtil.getTos(service.getAll(SecurityUtil.authUserId()), SecurityUtil.getDefaultCaloriesPerDay());
     }
 
     public List<MealTo> getAllFiltered(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
         log.debug("getAllFiltered");
-        if (startDate == null) startDate = LocalDate.MIN;
-        if (endDate == null) endDate = LocalDate.MAX;
-        if (startTime == null) startTime = LocalTime.MIN;
-        if (endTime == null) endTime = LocalTime.MAX;
-        return MealsUtil.getTos(service.getAllFiltered(startDate, startTime, endDate, endTime, SecurityUtil.authUserId()),
-                MealsUtil.DEFAULT_CALORIES_PER_DAY);
+        startDate = startDate == null ? LocalDate.MIN : startDate;
+        endDate = endDate == null ? LocalDate.MAX : endDate;
+        startTime = startTime == null ? LocalTime.MIN : startTime;
+        endTime = endTime == null ? LocalTime.MAX : endTime;
+        return service.getAllFiltered(startDate, startTime, endDate, endTime, SecurityUtil.authUserId(), SecurityUtil.getDefaultCaloriesPerDay());
     }
 
     public Meal get(int id) {
@@ -61,5 +60,4 @@ public class MealRestController {
         assureIdConsistent(meal, id);
         return service.update(meal, SecurityUtil.authUserId());
     }
-
 }

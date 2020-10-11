@@ -4,6 +4,7 @@ import static ru.javawebinar.topjava.util.MealsUtil.DEFAULT_CALORIES_PER_DAY;
 
 public class SecurityUtil {
 
+    private static int DEFAULT_CALORIES_PER_DAY =2000;
     private static int loggedUser;
 
     public static int authUserId() {
@@ -16,5 +17,9 @@ public class SecurityUtil {
 
     public static void setLoggedUser(int loggedUser) {
         SecurityUtil.loggedUser = loggedUser;
+    }
+
+    public static int getDefaultCaloriesPerDay() {
+        return DEFAULT_CALORIES_PER_DAY;
     }
 }

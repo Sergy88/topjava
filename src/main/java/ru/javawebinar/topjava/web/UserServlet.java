@@ -20,10 +20,9 @@ public class UserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int userId = Integer.parseInt(req.getParameter("login"));
-        SecurityUtil.setLoggedUser(userId);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        SecurityUtil.setLoggedUser(Integer.parseInt(req.getParameter("login")));
         req.setAttribute("loginId", SecurityUtil.authUserId());
-        resp.sendRedirect("index.html");
+        resp.sendRedirect("meals");
     }
 }

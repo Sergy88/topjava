@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://topjava.javawebinar.ru/functions" %>
@@ -68,15 +68,15 @@
         <div class="form-inline">
             <dl>
                 <dt>Начальная дата:</dt>
-                <dd><input type="date" name="startDate" value="<%= request.getParameter("startDate")%>"/></dd>
+                <dd><input type="date" name="startDate" value="${param.startDate}"/></dd>
                 <dt>Конечная дата:</dt>
-                <dd><input type="date" name="endDate" value="<%= request.getParameter("endDate")%>"/></dd>
+                <dd><input type="date" name="endDate" value="${param.endDate}"/></dd>
             </dl>
             <dl>
                 <dt>Начальное время:</dt>
-                <dd><input type="time" name="startTime" value="<%= request.getParameter("startTime")%>"/></dd>
+                <dd><input type="time" name="startTime" value=""${param.startTime}""/></dd>
                 <dt>Конечное время:</dt>
-                <dd><input type="time" name="endTime" value="<%= request.getParameter("endTime")%>"/></dd>
+                <dd><input type="time" name="endTime" value=""${param.endTime}""/></dd>
             </dl>
         </div>
         <button type="submit">Фильтровать</button>

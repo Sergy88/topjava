@@ -68,15 +68,15 @@
         <div class="form-inline">
             <dl>
                 <dt>Начальная дата:</dt>
-                <dd><input type="date" name="startDate" value="${param.startDate}"/></dd>
+                <dd><input type="date" name="startDate" value=${param.startDate}/></dd>
                 <dt>Конечная дата:</dt>
-                <dd><input type="date" name="endDate" value="${param.endDate}"/></dd>
+                <dd><input type="date" name="endDate" value=${param.endDate}/></dd>
             </dl>
             <dl>
                 <dt>Начальное время:</dt>
-                <dd><input type="time" name="startTime" value=""${param.startTime}""/></dd>
+                <dd><input type="time" name="startTime" value=${param.startTime}/></dd>
                 <dt>Конечное время:</dt>
-                <dd><input type="time" name="endTime" value=""${param.endTime}""/></dd>
+                <dd><input type="time" name="endTime" value=${param.endTime}/></dd>
             </dl>
         </div>
         <button type="submit">Фильтровать</button>

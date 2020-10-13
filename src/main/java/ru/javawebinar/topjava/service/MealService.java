@@ -9,8 +9,6 @@ import ru.javawebinar.topjava.util.MealsUtil;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Collection;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,16 +39,13 @@ public class MealService {
         return checkNotFoundWithId(repository.get(id, userId), id);
     }
 
-    public List<Meal> getAll(int userId) {
-        return repository.getAll(userId);
+    public List<MealTo> getAll(int userId, int calories) {
+        return MealsUtil.getTos(repository.getAll(userId), calories);
     }
 
-    public List<MealTo> getAllFiltered(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime, int userId, int calories_per_day) {
-        return MealsUtil.getTos(getAll(userId), calories_per_day)
-                .stream()
-                .filter(meal -> DateTimeUtil.isBetweenClosed(meal.getDateTime().toLocalDate(), startDate, endDate))
-                .filter(meal -> DateTimeUtil.isBetweenHalfOpen(meal.getDateTime().toLocalTime(), startTime, endTime))
-                .sorted(Comparator.comparing(MealTo::getDateTime).reversed())
+    public List<MealTo> getAllFiltered(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime, int userId, int calories) {
+        return MealsUtil.getTos(repository.getAllFilteredByDates(startDate, endDate, userId), calories).stream()
+                .filter(m -> DateTimeUtil.isBetweenHalfOpen(m.getDateTime().toLocalTime(), startTime, endTime))
                 .collect(Collectors.toList());
     }
 }

@@ -20,8 +20,6 @@ import static ru.javawebinar.topjava.util.Util.isBetweenHalfOpen;
 @Repository
 public class JdbcMealRepository implements MealRepository {
 
-    private final static String GET_ALL = "SELECT * FROM meals  WHERE user_id=? ORDER BY datetime DESC";
-
     private static final BeanPropertyRowMapper<Meal> rowMapper = BeanPropertyRowMapper.newInstance(Meal.class);
 
     private final JdbcTemplate jdbcTemplate;
@@ -43,7 +41,7 @@ public class JdbcMealRepository implements MealRepository {
     public Meal save(Meal meal, int userId) {
         MapSqlParameterSource map = new MapSqlParameterSource()
                 .addValue("id", meal.getId())
-                .addValue("datetime", meal.getDateTime())
+                .addValue("date_time", meal.getDateTime())
                 .addValue("description", meal.getDescription())
                 .addValue("calories", meal.getCalories())
                 .addValue("user_id", userId);
@@ -51,12 +49,14 @@ public class JdbcMealRepository implements MealRepository {
             Number newKey = insertMeal.executeAndReturnKey(map);
             meal.setId(newKey.intValue());
         } else {
-            namedParameterJdbcTemplate.update("UPDATE meals SET datetime=:datetime " +
+            if (namedParameterJdbcTemplate.update("UPDATE meals SET datetime=:datetime " +
                     "description=:description " +
                     "calories=:calories" +
-                    "user_id=:user_id", map);
+                    "WHERE user_id =:user_id AND id=:id", map)==0){
+                return null;
+            }
         }
-        return null;
+        return meal;
     }
 
     @Override
@@ -72,14 +72,11 @@ public class JdbcMealRepository implements MealRepository {
 
     @Override
     public List<Meal> getAll(int userId) {
-        return jdbcTemplate.query(GET_ALL, rowMapper, userId);
+        return jdbcTemplate.query("SELECT * FROM meals  WHERE user_id=? ORDER BY date_time DESC", rowMapper, userId);
     }
 
     @Override
     public List<Meal> getBetweenHalfOpen(LocalDateTime startDateTime, LocalDateTime endDateTime, int userId) {
-        List<Meal> meals = jdbcTemplate.query(GET_ALL, rowMapper, userId);
-        return meals.stream()
-                .filter(m -> isBetweenHalfOpen(m.getDateTime(), startDateTime, endDateTime))
-                .collect(Collectors.toList());
+        return  jdbcTemplate.query("SELECT * FROM meals WHERE userId=? AND date_time>=? AND date_time<? ORDER BY date_time DESC", rowMapper, userId, startDateTime, endDateTime);
     }
 }

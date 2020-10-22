@@ -7,6 +7,8 @@ import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
 import ru.javawebinar.topjava.util.MealsUtil;
 import ru.javawebinar.topjava.util.Util;
+import ru.javawebinar.topjava.web.MealTestData;
+import ru.javawebinar.topjava.web.UserTestData;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -31,9 +33,10 @@ public class InMemoryMealRepository implements MealRepository {
     private final Map<Integer, InMemoryBaseRepository<Meal>> usersMealsMap = new ConcurrentHashMap<>();
 
     {
-        MealsUtil.meals.forEach(meal -> save(meal, USER_ID));
-        save(new Meal(LocalDateTime.of(2015, Month.JUNE, 1, 14, 0), "Админ ланч", 510), ADMIN_ID);
-        save(new Meal(LocalDateTime.of(2015, Month.JUNE, 1, 21, 0), "Админ ужин", 1500), ADMIN_ID);
+        InMemoryBaseRepository<Meal> userMeals = new InMemoryBaseRepository();
+        MealTestData.MEALS.forEach(m -> userMeals.map.put(m.getId(), m));
+        usersMealsMap.put(UserTestData.USER_ID,userMeals);
+
     }
 
 

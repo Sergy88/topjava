@@ -20,6 +20,7 @@
         </encoder>
     </appender>
 
+    <logger name="org.springframework" level="debug"/>
     <logger name="ru.javawebinar.topjava" level="debug"/>
 
     <root level="info">

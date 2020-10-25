@@ -14,7 +14,6 @@ import ru.javawebinar.topjava.util.exception.NotFoundException;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.List;
 
 import static org.junit.Assert.assertThrows;
 import static ru.javawebinar.topjava.MealTestData.*;
@@ -94,12 +93,7 @@ public class MealServiceTest {
 
     @Test
     public void updateAbsentOwner() throws Exception {
-        assertThrows(NotFoundException.class, () -> service.update(meal1, ABSENT_USER_ID));
-    }
-
-    @Test
-    public void createAbsentOwner() throws Exception {
-        assertThrows(NotFoundException.class, () -> service.create(MealTestData.getNew(), ABSENT_USER_ID));
+        assertThrows(NotFoundException.class, () -> service.update(meal1, NOT_FOUND));
     }
 
     @Test

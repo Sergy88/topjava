@@ -45,6 +45,6 @@ public class MealService {
 
     public Meal create(Meal meal, int userId) {
         Assert.notNull(meal, "meal must not be null");
-        return repository.save(meal, userId);
+        return checkNotFoundWithId(repository.save(meal, userId), userId);
     }
 }

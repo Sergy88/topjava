@@ -23,17 +23,20 @@ public class Meal extends AbstractBaseEntity {
     @NotNull
     private LocalDateTime dateTime;
 
-    @Column(name = "description", nullable = false)
+    @Column(name = "description", nullable = false, length = 120)
     @NotBlank
+    @Size(min=2, max=120)
     private String description;
 
-    @Column(name = "calories", nullable = false)
-    @NotNull
+    @Column(name = "calories", nullable = false )
+    @Min(value=10)
+    @Max(value=5000)
     private int calories;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+    @NotNull
     private User user;
 
     public Meal() {

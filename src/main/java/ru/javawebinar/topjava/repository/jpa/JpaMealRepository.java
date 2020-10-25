@@ -21,12 +21,21 @@ public class JpaMealRepository implements MealRepository {
     @Override
     @Transactional
     public Meal save(Meal meal, int userId) {
-        User ref = em.getReference(User.class, userId);
-        meal.setUser(ref);
         if (meal.isNew()) {
+            User owner = em.find(User.class, userId);
+            if (owner==null){
+                return null;
+            }
+            meal.setUser(owner);
             em.persist(meal);
         } else {
-            em.merge(meal);
+            Meal originalMeal = em.find(Meal.class, meal.getId());
+            if (originalMeal.getUser().getId() == userId) {
+                meal.setUser(originalMeal.getUser());
+                return em.merge(meal);
+            } else {
+                return null;
+            }
         }
         return meal;
     }
@@ -36,24 +45,24 @@ public class JpaMealRepository implements MealRepository {
     public boolean delete(int id, int userId) {
         return em.createNamedQuery(Meal.DELETE).setParameter("id", id).setParameter("user_id", userId)
                 .executeUpdate() != 0;
-
     }
 
     @Override
     public Meal get(int id, int userId) {
-        Meal reference = em.getReference(Meal.class, id);
-        if (reference.getUser().getId() == userId) {
-            return reference;
+        Meal meal = em.find(Meal.class, id);
+        if (!(meal == null) && (meal.getUser().getId() == userId)) {
+            return meal;
         } else return null;
     }
 
     @Override
     public List<Meal> getAll(int userId) {
-        return em.createNamedQuery(Meal.GET_ALL).setParameter("user_id", userId).getResultList();
+        return em.createNamedQuery(Meal.GET_ALL, Meal.class).setParameter("user_id", userId).getResultList();
     }
 
     @Override
     public List<Meal> getBetweenHalfOpen(LocalDateTime startDateTime, LocalDateTime endDateTime, int userId) {
-        return null;
+        return em.createNamedQuery(Meal.GET_BETWEEN_HALF_OPEN, Meal.class).setParameter("start_date_time", startDateTime)
+                .setParameter("end_date_time", endDateTime).setParameter("user_id", userId).getResultList();
     }
 }

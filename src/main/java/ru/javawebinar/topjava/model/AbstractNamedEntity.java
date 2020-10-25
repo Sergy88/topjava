@@ -11,7 +11,7 @@ public abstract class AbstractNamedEntity extends AbstractBaseEntity {
 
     @NotBlank
     @Size(min = 2, max = 100)
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, length =100)
     protected String name;
 
     protected AbstractNamedEntity() {

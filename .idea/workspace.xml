@@ -50,6 +50,7 @@
     <list id="3bb62fb0-8542-4bfc-a856-35c993efa3b1" name="4 8 add jpa" comment="" />
     <list id="664a0acd-cd2b-46c6-9332-f14b6d7d734d" name="4 9 add named query and transaction" comment="" />
     <list id="0145e199-8b9a-412b-9b01-7f4f6ced5318" name="5 0 fix" comment="" />
+    <list id="a57719a2-95d3-413a-b32b-48c5d9828804" name="5 1 jdk 15" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -331,6 +332,7 @@
       <changelist id="77f1ca77-b097-49c4-aa0b-1b7d06d19e66" name="3 14 test logging" comment="" />
       <changelist id="cf177c8c-5d00-4414-890a-e12190655a26" name="3 15 fix servlet" comment="" />
       <changelist id="0145e199-8b9a-412b-9b01-7f4f6ced5318" name="5 0 fix" comment="" />
+      <changelist id="a57719a2-95d3-413a-b32b-48c5d9828804" name="5 1 jdk 15" comment="" />
       <created>1603120662993</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -341,7 +343,7 @@
       <workItem from="1603461323179" duration="2635000" />
       <workItem from="1603463968515" duration="24029000" />
       <workItem from="1603628167125" duration="38533000" />
-      <workItem from="1603900790446" duration="3209000" />
+      <workItem from="1603900790446" duration="4234000" />
     </task>
     <task id="LOCAL-00001" summary="hw4 is done">
       <created>1603643181150</created>
@@ -433,10 +435,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.3440.1400@0.0.3440.1400" timestamp="1603206485722" />
-    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog" timestamp="1604069825777">
+    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog" timestamp="1604070243627">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604069825777" />
+    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604070243627" />
     <state x="1500" y="455" key="FileChooserDialogImpl" timestamp="1604069808185">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -637,9 +639,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1400" y="382" key="spring file set editor/0.0.3440.1400@0.0.3440.1400" timestamp="1603462666883" />
-    <state x="2202" y="261" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1604068623805">
+    <state x="2202" y="261" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1604069958427">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="2202" y="261" key="vcs.ApplyPatchDifferentiatedDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604068623805" />
+    <state x="2202" y="261" key="vcs.ApplyPatchDifferentiatedDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604069958427" />
   </component>
 </project>

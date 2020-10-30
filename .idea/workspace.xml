@@ -27,15 +27,13 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/hw4" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2307bc25-c918-4eee-8964-6639b3df5b99" name="Default Changelist" comment="hw4 is done v3">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="7c92701b-6be9-4364-92c1-3990de641ecd" name="3 13 test UserService" comment="" />
     <list id="77f1ca77-b097-49c4-aa0b-1b7d06d19e66" name="3 14 test logging" comment="" />
@@ -51,6 +49,7 @@
     <list id="5fb0a571-9ede-4eed-8c2b-b0f498eda41e" name="4 7 create inmemory test ctx" comment="" />
     <list id="3bb62fb0-8542-4bfc-a856-35c993efa3b1" name="4 8 add jpa" comment="" />
     <list id="664a0acd-cd2b-46c6-9332-f14b6d7d734d" name="4 9 add named query and transaction" comment="" />
+    <list id="0145e199-8b9a-412b-9b01-7f4f6ced5318" name="5 0 fix" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +66,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="hw3" />
+        <entry key="$PROJECT_DIR$" value="hw4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,9 +110,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -129,6 +128,9 @@
       <recent name="ru.javawebinar.topjava.web.user" />
       <recent name="ru.javawebinar.topjava.web" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\projects\topjava" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -137,21 +139,23 @@
       <recent name="C:\dev\projects\topjava" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MealServiceTest.update">
-    <configuration name="MealServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="topjava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.javawebinar.topjava.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
+  <component name="RunManager" selected="JUnit.MealServiceTest.get">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="populateDB.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/db/populateDB.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="da64247f-0f0c-49b2-8afd-eea5caa551e8" namespace="database/&quot;topjava&quot;" />
+      <method v="2" />
     </configuration>
     <configuration name="MealServiceTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="topjava" />
@@ -169,7 +173,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MealServiceTest.createAbsentOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MealServiceTest.deleteNotFount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="topjava" />
       <extension name="coverage">
         <pattern>
@@ -179,13 +183,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
       <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
-      <option name="METHOD_NAME" value="createAbsentOwner" />
+      <option name="METHOD_NAME" value="deleteNotFount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MealServiceTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MealServiceTest.deleteNotOwn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="topjava" />
       <extension name="coverage">
         <pattern>
@@ -195,13 +199,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
       <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
-      <option name="METHOD_NAME" value="update" />
+      <option name="METHOD_NAME" value="deleteNotOwn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MealServiceTest.updateNoOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MealServiceTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="topjava" />
       <extension name="coverage">
         <pattern>
@@ -211,7 +215,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
       <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
-      <option name="METHOD_NAME" value="updateNoOwner" />
+      <option name="METHOD_NAME" value="get" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -291,20 +295,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MealServiceTest" />
-      <item itemvalue="JUnit.MealServiceTest.updateNoOwner" />
-      <item itemvalue="JUnit.MealServiceTest.createAbsentOwner" />
-      <item itemvalue="JUnit.MealServiceTest.create" />
-      <item itemvalue="JUnit.MealServiceTest.update" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.31" />
+      <item itemvalue="Database Script.populateDB.sql" />
+      <item itemvalue="JUnit.MealServiceTest.get" />
+      <item itemvalue="JUnit.MealServiceTest.deleteNotOwn" />
+      <item itemvalue="JUnit.MealServiceTest.deleteNotFount" />
+      <item itemvalue="JUnit.MealServiceTest.create" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MealServiceTest.update" />
         <item itemvalue="JUnit.MealServiceTest.create" />
-        <item itemvalue="JUnit.MealServiceTest" />
-        <item itemvalue="JUnit.MealServiceTest.createAbsentOwner" />
-        <item itemvalue="JUnit.MealServiceTest.updateNoOwner" />
+        <item itemvalue="JUnit.MealServiceTest.deleteNotFount" />
+        <item itemvalue="JUnit.MealServiceTest.deleteNotOwn" />
+        <item itemvalue="JUnit.MealServiceTest.get" />
+        <item itemvalue="Database Script.populateDB.sql" />
       </list>
     </recent_temporary>
   </component>
@@ -326,6 +330,7 @@
       <changelist id="7c92701b-6be9-4364-92c1-3990de641ecd" name="3 13 test UserService" comment="" />
       <changelist id="77f1ca77-b097-49c4-aa0b-1b7d06d19e66" name="3 14 test logging" comment="" />
       <changelist id="cf177c8c-5d00-4414-890a-e12190655a26" name="3 15 fix servlet" comment="" />
+      <changelist id="0145e199-8b9a-412b-9b01-7f4f6ced5318" name="5 0 fix" comment="" />
       <created>1603120662993</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -336,7 +341,7 @@
       <workItem from="1603461323179" duration="2635000" />
       <workItem from="1603463968515" duration="24029000" />
       <workItem from="1603628167125" duration="38533000" />
-      <workItem from="1603900790446" duration="2440000" />
+      <workItem from="1603900790446" duration="3209000" />
     </task>
     <task id="LOCAL-00001" summary="hw4 is done">
       <created>1603643181150</created>
@@ -370,19 +375,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/hw4" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -440,14 +433,14 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.3440.1400@0.0.3440.1400" timestamp="1603206485722" />
-    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog" timestamp="1603650130589">
+    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog" timestamp="1604069825777">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603650130589" />
-    <state x="1500" y="455" key="FileChooserDialogImpl" timestamp="1603465404187">
+    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604069825777" />
+    <state x="1500" y="455" key="FileChooserDialogImpl" timestamp="1604069808185">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1500" y="455" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1603465404187" />
+    <state x="1500" y="455" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1604069808185" />
     <state x="2447" y="604" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1603646263670">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -556,10 +549,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="336" y="122" key="MergeDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603462890745" />
-    <state x="1200" y="274" key="SettingsEditor" timestamp="1603462680802">
+    <state x="1200" y="274" key="SettingsEditor" timestamp="1604069825412">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1200" y="274" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1603462680802" />
+    <state x="1200" y="274" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1604069825412" />
     <state width="498" height="497" key="SwitcherDM" timestamp="1603461810240">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -644,25 +637,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1400" y="382" key="spring file set editor/0.0.3440.1400@0.0.3440.1400" timestamp="1603462666883" />
-    <state x="2219" y="362" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1603463599254">
+    <state x="2202" y="261" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1604068623805">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="2219" y="362" key="vcs.ApplyPatchDifferentiatedDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603463599254" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javawebinar/topjava/web/meal/MealRestController.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javawebinar/topjava/repository/jpa/JpaMealRepository.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="2202" y="261" key="vcs.ApplyPatchDifferentiatedDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604068623805" />
   </component>
 </project>

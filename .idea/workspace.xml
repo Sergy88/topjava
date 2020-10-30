@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="topjava:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/hw4" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2307bc25-c918-4eee-8964-6639b3df5b99" name="Default Changelist" comment="hw4 is done v3">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+    </list>
+    <list id="7c92701b-6be9-4364-92c1-3990de641ecd" name="3 13 test UserService" comment="" />
+    <list id="77f1ca77-b097-49c4-aa0b-1b7d06d19e66" name="3 14 test logging" comment="" />
+    <list id="cf177c8c-5d00-4414-890a-e12190655a26" name="3 15 fix servlet" comment="" />
+    <list id="30a7fb51-f897-47ec-9856-5d05947fcc2c" name="4 0 fix" comment="" />
+    <list id="c5426604-a859-488b-b465-7ffb014e3c42" name="4 1 HW3" comment="" />
+    <list id="ad95ca0f-aae4-4a1e-9ff1-5a543be4898f" name="4 10 add hsqldb" comment="" />
+    <list id="82f43a98-a87d-42b8-89ab-1243b7faf582" name="4 2 HW3 optional" comment="" />
+    <list id="b478ef1a-2855-4603-b83f-d0044d23f744" name="4 3 tests refactoring" comment="" />
+    <list id="412444f2-77c9-469e-b333-0cd8b6a6f1ab" name="4 4 HW3 fix logging" comment="" />
+    <list id="537c2654-d72c-4dc8-a1dc-2455c667e679" name="4 5 improve code" comment="" />
+    <list id="25b48298-34fc-4f92-83c4-eb2c1dd5eb70" name="4 6 init and populate db" comment="" />
+    <list id="5fb0a571-9ede-4eed-8c2b-b0f498eda41e" name="4 7 create inmemory test ctx" comment="" />
+    <list id="3bb62fb0-8542-4bfc-a856-35c993efa3b1" name="4 8 add jpa" comment="" />
+    <list id="664a0acd-cd2b-46c6-9332-f14b6d7d734d" name="4 9 add named query and transaction" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="hw3" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="hw4 is done" />
+        <option name="rewordedMessage" value="hw4 is done" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="caa22bb7929420d97296a3f1d73dd310b7a4786c" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1j6NceOhxCYeSh8BcnAHXxvLMFZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="hsqldb&#10;postgresql&#10;h2" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.javawebinar.topjava.repository.jpa" />
+      <recent name="ru.javawebinar.topjava.service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.javawebinar.topjava" />
+      <recent name="ru.javawebinar.topjava.web.user" />
+      <recent name="ru.javawebinar.topjava.web" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\projects\topjava\patch" />
+      <recent name="C:\dev\projects\topjava" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MealServiceTest.update">
+    <configuration name="MealServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.javawebinar.topjava.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MealServiceTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.javawebinar.topjava.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
+      <option name="METHOD_NAME" value="create" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MealServiceTest.createAbsentOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.javawebinar.topjava.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
+      <option name="METHOD_NAME" value="createAbsentOwner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MealServiceTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.javawebinar.topjava.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
+      <option name="METHOD_NAME" value="update" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MealServiceTest.updateNoOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.javawebinar.topjava.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.javawebinar.topjava.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.javawebinar.topjava.service.MealServiceTest" />
+      <option name="METHOD_NAME" value="updateNoOwner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/topjava_war_exploded/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="topjava:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/topjava_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_topjava" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62814" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="topjava:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.MealServiceTest" />
+      <item itemvalue="JUnit.MealServiceTest.updateNoOwner" />
+      <item itemvalue="JUnit.MealServiceTest.createAbsentOwner" />
+      <item itemvalue="JUnit.MealServiceTest.create" />
+      <item itemvalue="JUnit.MealServiceTest.update" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.31" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MealServiceTest.update" />
+        <item itemvalue="JUnit.MealServiceTest.create" />
+        <item itemvalue="JUnit.MealServiceTest" />
+        <item itemvalue="JUnit.MealServiceTest.createAbsentOwner" />
+        <item itemvalue="JUnit.MealServiceTest.updateNoOwner" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2307bc25-c918-4eee-8964-6639b3df5b99" name="Default Changelist" comment="" />
+      <changelist id="30a7fb51-f897-47ec-9856-5d05947fcc2c" name="4 0 fix" comment="" />
+      <changelist id="c5426604-a859-488b-b465-7ffb014e3c42" name="4 1 HW3" comment="" />
+      <changelist id="82f43a98-a87d-42b8-89ab-1243b7faf582" name="4 2 HW3 optional" comment="" />
+      <changelist id="b478ef1a-2855-4603-b83f-d0044d23f744" name="4 3 tests refactoring" comment="" />
+      <changelist id="412444f2-77c9-469e-b333-0cd8b6a6f1ab" name="4 4 HW3 fix logging" comment="" />
+      <changelist id="537c2654-d72c-4dc8-a1dc-2455c667e679" name="4 5 improve code" comment="" />
+      <changelist id="25b48298-34fc-4f92-83c4-eb2c1dd5eb70" name="4 6 init and populate db" comment="" />
+      <changelist id="5fb0a571-9ede-4eed-8c2b-b0f498eda41e" name="4 7 create inmemory test ctx" comment="" />
+      <changelist id="3bb62fb0-8542-4bfc-a856-35c993efa3b1" name="4 8 add jpa" comment="" />
+      <changelist id="664a0acd-cd2b-46c6-9332-f14b6d7d734d" name="4 9 add named query and transaction" comment="" />
+      <changelist id="ad95ca0f-aae4-4a1e-9ff1-5a543be4898f" name="4 10 add hsqldb" comment="" />
+      <changelist id="7c92701b-6be9-4364-92c1-3990de641ecd" name="3 13 test UserService" comment="" />
+      <changelist id="77f1ca77-b097-49c4-aa0b-1b7d06d19e66" name="3 14 test logging" comment="" />
+      <changelist id="cf177c8c-5d00-4414-890a-e12190655a26" name="3 15 fix servlet" comment="" />
+      <created>1603120662993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603120662993</updated>
+      <workItem from="1603120664385" duration="2223000" />
+      <workItem from="1603139069574" duration="38754000" />
+      <workItem from="1603459218726" duration="2094000" />
+      <workItem from="1603461323179" duration="2635000" />
+      <workItem from="1603463968515" duration="24029000" />
+      <workItem from="1603628167125" duration="38533000" />
+      <workItem from="1603900790446" duration="2440000" />
+    </task>
+    <task id="LOCAL-00001" summary="hw4 is done">
+      <created>1603643181150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603643181150</updated>
+    </task>
+    <task id="LOCAL-00002" summary="hw4 is done">
+      <created>1603646064925</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603646064925</updated>
+    </task>
+    <task id="LOCAL-00003" summary="hw4 is done v3">
+      <created>1603651866797</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603651866797</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/hw4" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="hw3 is done" />
+    <MESSAGE value="hw4 is done" />
+    <MESSAGE value="hw4 is done v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw4 is done v3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1619" y="591" key="#Assign_Data_Sources" timestamp="1603468518022">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1619" y="591" key="#Assign_Data_Sources/0.0.3440.1400@0.0.3440.1400" timestamp="1603468518022" />
+    <state x="1109" y="541" key="#SQL_Dialects" timestamp="1603191778259">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1109" y="541" key="#SQL_Dialects/0.0.3440.1400@0.0.3440.1400" timestamp="1603191778259" />
+    <state x="1402" y="342" width="1092" height="724" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603894927450">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1402" y="342" width="1092" height="724" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603894927450" />
+    <state x="2385" y="419" key="#com.intellij.ide.util.MemberChooser" timestamp="1603205894226">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2385" y="419" key="#com.intellij.ide.util.MemberChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1603205894226" />
+    <state x="1524" y="606" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1603458244013">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1524" y="606" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.3440.1400@0.0.3440.1400" timestamp="1603458244013" />
+    <state x="1397" y="624" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603462717229">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1397" y="624" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603462717229" />
+    <state x="2586" y="622" width="608" height="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603464008533">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2586" y="622" width="608" height="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.3440.1400@0.0.3440.1400" timestamp="1603464008533" />
+    <state x="2310" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603202622336">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2310" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603202622336" />
+    <state x="690" y="584" width="1521" height="728" key="#xdebugger.evaluate" timestamp="1603642789474">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="690" y="584" width="1521" height="728" key="#xdebugger.evaluate/0.0.3440.1400@0.0.3440.1400" timestamp="1603642789474" />
+    <state x="1478" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1603120912772">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1478" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.3440.1400@0.0.3440.1400" timestamp="1603120912772" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1603206485722">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.3440.1400@0.0.3440.1400" timestamp="1603206485722" />
+    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog" timestamp="1603650130589">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="672" y="72" width="2360" height="1207" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603650130589" />
+    <state x="1500" y="455" key="FileChooserDialogImpl" timestamp="1603465404187">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1500" y="455" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1603465404187" />
+    <state x="2447" y="604" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1603646263670">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2447" y="604" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603646263670" />
+    <state width="2873" height="491" key="GridCell.Tab.0.bottom" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="2873" height="491" key="GridCell.Tab.0.center" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="2873" height="491" key="GridCell.Tab.0.left" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="2873" height="491" key="GridCell.Tab.0.right" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="2873" height="491" key="GridCell.Tab.1.bottom" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="2873" height="491" key="GridCell.Tab.1.center" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="2873" height="491" key="GridCell.Tab.1.left" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="2873" height="491" key="GridCell.Tab.1.right" timestamp="1603895719171">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2873" height="491" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719171" />
+    <state width="1117" height="491" key="GridCell.Tab.2.bottom" timestamp="1603895719164">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1117" height="491" key="GridCell.Tab.2.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719164" />
+    <state width="1117" height="491" key="GridCell.Tab.2.center" timestamp="1603895719164">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1117" height="491" key="GridCell.Tab.2.center/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719164" />
+    <state width="1117" height="491" key="GridCell.Tab.2.left" timestamp="1603895719164">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1117" height="491" key="GridCell.Tab.2.left/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719164" />
+    <state width="1117" height="491" key="GridCell.Tab.2.right" timestamp="1603895719164">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1117" height="491" key="GridCell.Tab.2.right/0.0.3440.1400@0.0.3440.1400" timestamp="1603895719164" />
+    <state width="2357" height="397" key="GridCell.Tab.3.bottom" timestamp="1603467393233">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.3.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1603467393233" />
+    <state width="2357" height="397" key="GridCell.Tab.3.center" timestamp="1603467393233">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.3.center/0.0.3440.1400@0.0.3440.1400" timestamp="1603467393233" />
+    <state width="2357" height="397" key="GridCell.Tab.3.left" timestamp="1603467393233">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.3.left/0.0.3440.1400@0.0.3440.1400" timestamp="1603467393233" />
+    <state width="2357" height="397" key="GridCell.Tab.3.right" timestamp="1603467393233">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.3.right/0.0.3440.1400@0.0.3440.1400" timestamp="1603467393233" />
+    <state width="2357" height="397" key="GridCell.Tab.4.bottom" timestamp="1603466907835">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.4.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1603466907835" />
+    <state width="2357" height="397" key="GridCell.Tab.4.center" timestamp="1603466907835">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.4.center/0.0.3440.1400@0.0.3440.1400" timestamp="1603466907835" />
+    <state width="2357" height="397" key="GridCell.Tab.4.left" timestamp="1603466907835">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.4.left/0.0.3440.1400@0.0.3440.1400" timestamp="1603466907835" />
+    <state width="2357" height="397" key="GridCell.Tab.4.right" timestamp="1603466907835">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.4.right/0.0.3440.1400@0.0.3440.1400" timestamp="1603466907835" />
+    <state width="2357" height="397" key="GridCell.Tab.5.bottom" timestamp="1603466908764">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.5.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1603466908764" />
+    <state width="2357" height="397" key="GridCell.Tab.5.center" timestamp="1603466908764">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.5.center/0.0.3440.1400@0.0.3440.1400" timestamp="1603466908764" />
+    <state width="2357" height="397" key="GridCell.Tab.5.left" timestamp="1603466908764">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.5.left/0.0.3440.1400@0.0.3440.1400" timestamp="1603466908764" />
+    <state width="2357" height="397" key="GridCell.Tab.5.right" timestamp="1603466908764">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="2357" height="397" key="GridCell.Tab.5.right/0.0.3440.1400@0.0.3440.1400" timestamp="1603466908764" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1603465861538">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.3440.1400@0.0.3440.1400" timestamp="1603465861538" />
+    <state x="336" y="122" key="MergeDialog" timestamp="1603462890745">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="336" y="122" key="MergeDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603462890745" />
+    <state x="1200" y="274" key="SettingsEditor" timestamp="1603462680802">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1200" y="274" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1603462680802" />
+    <state width="498" height="497" key="SwitcherDM" timestamp="1603461810240">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="498" height="497" key="SwitcherDM/0.0.3440.1400@0.0.3440.1400" timestamp="1603461810240" />
+    <state x="2427" y="617" key="VCS.ChangelistChooser" timestamp="1603211657547">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2427" y="617" key="VCS.ChangelistChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1603211657547" />
+    <state x="1312" y="420" width="1058" height="851" key="Vcs.Push.Dialog.v2" timestamp="1603651906056">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1312" y="420" width="1058" height="851" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1603651906056" />
+    <state x="2061" y="410" width="1010" height="797" key="VcsDiffUtil.ChangesDialog" timestamp="1603650144226">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2061" y="410" width="1010" height="797" key="VcsDiffUtil.ChangesDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603650144226" />
+    <state x="1536" y="478" key="chooseDestDirectoryDialog" timestamp="1603461517809">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1536" y="478" key="chooseDestDirectoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603461517809" />
+    <state x="2474" y="587" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603633609168">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2474" y="587" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.3440.1400@0.0.3440.1400" timestamp="1603633609168" />
+    <state x="1813" y="100" width="1534" height="1207" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603210843174">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1813" y="100" width="1534" height="1207" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603210843174" />
+    <state x="2351" y="465" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1603643307203">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2351" y="465" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603643307203" />
+    <state x="1234" y="270" width="865" height="788" key="dock-window-1" timestamp="1603634108905">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1234" y="270" width="865" height="788" key="dock-window-1/0.0.3440.1400@0.0.3440.1400" timestamp="1603634108905" />
+    <state x="1004" y="386" width="948" height="867" key="dock-window-2" timestamp="1603634450403">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1004" y="386" width="948" height="867" key="dock-window-2/0.0.3440.1400@0.0.3440.1400" timestamp="1603634450403" />
+    <state x="870" y="0" width="948" height="530" key="dock-window-3" timestamp="1603634450403">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="870" y="0" width="948" height="530" key="dock-window-3/0.0.3440.1400@0.0.3440.1400" timestamp="1603634450403" />
+    <state x="860" y="528" width="948" height="867" key="dock-window-4" timestamp="1603634450403">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="860" y="528" width="948" height="867" key="dock-window-4/0.0.3440.1400@0.0.3440.1400" timestamp="1603634450403" />
+    <state x="1288" y="290" width="946" height="867" key="dock-window-5" timestamp="1603640694711">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1288" y="290" width="946" height="867" key="dock-window-5/0.0.3440.1400@0.0.3440.1400" timestamp="1603640694711" />
+    <state x="355" y="290" width="946" height="867" key="dock-window-6" timestamp="1603640694711">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="355" y="290" width="946" height="867" key="dock-window-6/0.0.3440.1400@0.0.3440.1400" timestamp="1603640694711" />
+    <state x="1101" y="219" width="946" height="867" key="dock-window-7" timestamp="1603641120133">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1101" y="219" width="946" height="867" key="dock-window-7/0.0.3440.1400@0.0.3440.1400" timestamp="1603641120133" />
+    <state x="150" y="209" width="946" height="867" key="dock-window-8" timestamp="1603641120133">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="150" y="209" width="946" height="867" key="dock-window-8/0.0.3440.1400@0.0.3440.1400" timestamp="1603641120133" />
+    <state x="885" y="440" width="585" height="801" key="find.popup" timestamp="1603459960819">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="885" y="440" width="585" height="801" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1603459960819" />
+    <state x="1102" y="320" key="new project wizard" timestamp="1603717409953">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1102" y="320" key="new project wizard/0.0.3440.1400@0.0.3440.1400" timestamp="1603717409953" />
+    <state x="2236" y="334" key="run.anything.popup" timestamp="1603207258972">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2236" y="334" key="run.anything.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1603207258972" />
+    <state x="1383" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1603463672058">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1383" y="315" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1603463672058" />
+    <state x="1400" y="382" key="spring file set editor" timestamp="1603462666883">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1400" y="382" key="spring file set editor/0.0.3440.1400@0.0.3440.1400" timestamp="1603462666883" />
+    <state x="2219" y="362" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1603463599254">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2219" y="362" key="vcs.ApplyPatchDifferentiatedDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603463599254" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javawebinar/topjava/web/meal/MealRestController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javawebinar/topjava/repository/jpa/JpaMealRepository.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

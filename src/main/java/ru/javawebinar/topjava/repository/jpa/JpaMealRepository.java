@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
 @Repository
 @Transactional(readOnly = true)
 public class JpaMealRepository implements MealRepository {
@@ -60,5 +61,10 @@ public class JpaMealRepository implements MealRepository {
                 .setParameter("startDateTime", startDateTime)
                 .setParameter("endDateTime", endDateTime)
                 .getResultList();
+    }
+
+    @Override
+    public Meal getMealWithUser(int id, int UserId) {
+        throw new UnsupportedOperationException();
     }
 }

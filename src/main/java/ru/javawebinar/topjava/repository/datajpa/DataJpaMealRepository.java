@@ -8,6 +8,7 @@ import ru.javawebinar.topjava.repository.MealRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class DataJpaMealRepository implements MealRepository {
@@ -15,6 +16,7 @@ public class DataJpaMealRepository implements MealRepository {
     private final CrudMealRepository crudRepository;
 
     private final CrudUserRepository crudUserRepository;
+    private Optional<Meal> byId;
 
     public DataJpaMealRepository(CrudMealRepository crudRepository, CrudUserRepository crudUserRepository) {
         this.crudRepository = crudRepository;
@@ -28,9 +30,13 @@ public class DataJpaMealRepository implements MealRepository {
             meal.setUser(crudUserRepository.getOne(userId));
             return crudRepository.saveAndFlush(meal);
         }
-        Meal mealDb = crudRepository.findById(meal.getId()).orElse(null);
-        meal.setUser(mealDb.getUser());
-        return mealDb != null && mealDb.getUser().getId() == userId ? crudRepository.saveAndFlush(meal) : null;
+        Optional<Meal> meal1 = crudRepository.findById(meal.getId()).filter(m -> m.getUser().getId() == userId);
+        if (meal1.isEmpty()) {
+            return null;
+        } else {
+            meal.setUser(meal1.get().getUser());
+        }
+        return crudRepository.saveAndFlush(meal);
     }
 
     @Override
@@ -55,7 +61,8 @@ public class DataJpaMealRepository implements MealRepository {
     }
 
     @Override
-    public Meal getMealWithUser(int id, int UserId) {
-        return crudRepository.getMealById(id);
+    public Meal getWithUser(int id, int userId) {
+        Meal mealById = crudRepository.getMealById(id);
+        return mealById.getUser().getId() == userId ? mealById : null;
     }
 }

@@ -43,6 +43,10 @@ public class User extends AbstractNamedEntity {
     @NotNull
     private Date registered = new Date();
 
+    @OneToMany(mappedBy = "user")
+    @Column(name = "meals")
+    private List<Meal> meals;
+
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
             uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "role"}, name = "user_roles_unique_idx")})
@@ -54,9 +58,6 @@ public class User extends AbstractNamedEntity {
     @Range(min = 10, max = 10000)
     private int caloriesPerDay = DEFAULT_CALORIES_PER_DAY;
 
-    @OneToMany(mappedBy = "user")
-    @Column(name = "meals")
-    private List<Meal> meals;
 
     public List<Meal> getMeals() {
         return meals;

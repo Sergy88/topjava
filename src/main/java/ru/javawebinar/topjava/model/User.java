@@ -44,7 +44,6 @@ public class User extends AbstractNamedEntity {
     private Date registered = new Date();
 
     @OneToMany(mappedBy = "user")
-    @Column(name = "meals")
     private List<Meal> meals;
 
     @Enumerated(EnumType.STRING)

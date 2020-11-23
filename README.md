@@ -159,6 +159,43 @@ Java Enterprise Online Project
 -----
 ## [Пример 7-го занятия онлайн стажировки, несколько видео открыто](https://github.com/JavaOPs/topjava/blob/master/doc/lesson07.md)
 
+### Команды CURL для тестирования RestApi приложения:
+Получить все приемы пищи
+curl http://localhost:8080/topjava/rest/meals
+
+Получить конкретный прием пищи.
+curl "http://localhost:8080/topjava/rest/meals/100007"
+
+Удалить конкретный прием пищи.
+curl -X DELETE "http://localhost:8080/topjava/rest/meals/100007"
+
+Получить все приемы пищи отсортированные по датам (включительно) и по времение (от - включительно, до - исключительно):
+curl -H "Content-Type:application/json" -X GET "http://localhost:8080/topjava/rest/meals/filter?startDate=2020-01-31&endDate=2020-01-31&startTime=10:00&endTime=22:22"
+
+Обновить конкретный прием пищи. (win command line):
+curl -H "Content-Type:application/json" -X PUT -d "{\"id\":100007,\"dateTime\":\"2020-01-31T13:00:00\",\"description\":\"updated\",\"calories\":1000,\"user\":null}" http://localhost:8080/topjava/rest/meals/100007
+
+Создать новый прием пищи: (win command line):
+curl -H "Content-Type:application/json" -X PUT -d "{\"id\":null,\"dateTime\":\"2020-01-31T16:00:00\",\"description\":\"new meal\",\"calories\":1000,\"user\":null}" http://localhost:8080/topjava/rest/meals
+
+Получить всех пользователей:
+curl http://localhost:8080/topjava/rest/admin/users
+
+Создать пользователя: (win command line):
+curl -H "Content-Type:application/json" -X POST -d "{\"id\":null,\"name\":\"NewUser\",\"email\":\"new@gmail.com\",\"password\":\"admin\",\"enabled\":true,\"registered\":\"2020-12-22T18:54:21.706+00:00\",\"roles\":[\"USER\",\"ADMIN\"],\"caloriesPerDay\":1500,\"meals\":null}" http://localhost:8080/topjava/rest/admin/users/
+
+Получить конкретного пользователя:
+curl http://localhost:8080/topjava/rest/admin/users/100001
+
+обновить пользователя: (win command line):
+curl -H "Content-Type:application/json" -X PUT -d "{\"id\":100001,\"name\":\"Admin\",\"email\":\"admin@gmail.com\",\"password\":\"admin\",\"enabled\":true,\"registered\":\"2020-11-22T18:54:21.706+00:00\",\"roles\":[\"USER\",\"ADMIN\"],\"caloriesPerDay\":1500,\"meals\":null}" http://localhost:8080/topjava/rest/admin/users/100001
+
+удалить пользователя:
+curl -X DELETE http://localhost:8080/topjava/rest/admin/users/100001
+
+найти пользователя по email:
+curl http://localhost:8080/topjava/rest/admin/users/by?email=admin@gmail.com
+
 ### Полезные ресурсы
 > ВНИМАНИЕ:
 >  - **ДЗ первого урока будет связано с [созданием небольшого CRUD приложения (в памяти, без DB) на JSP и сервлетах](https://danielniko.wordpress.com/2012/04/17/simple-crud-using-jsp-servlet-and-mysql/)**. Введение будет, но предварительное знакомство не помешает.

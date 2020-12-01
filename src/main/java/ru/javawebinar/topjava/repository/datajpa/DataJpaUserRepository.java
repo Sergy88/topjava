@@ -4,6 +4,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.repository.UserRepository;
+import ru.javawebinar.topjava.util.exception.NotFoundException;
 
 import java.util.List;
 
@@ -45,5 +46,13 @@ public class DataJpaUserRepository implements UserRepository {
     @Override
     public User getWithMeals(int id) {
         return crudRepository.getWithMeals(id);
+    }
+
+    @Override
+    public Boolean changeEnabled(int id, Boolean enabled) {
+        if (crudRepository.updateUserEnabled(id, enabled) == 1) {
+            return crudRepository.getById(id).isEnabled();
+        }
+        throw new NotFoundException("Cant`t change user entity");
     }
 }

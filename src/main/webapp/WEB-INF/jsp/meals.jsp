@@ -7,13 +7,16 @@
 <body>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
+<script type="text/javascript" src="resources/js/topjava.meals.js" defer></script>
+<script type="text/javascript" src="resources/js/topjava.common.js" defer></script>
+
 <section>
     <h3><spring:message code="meal.title"/></h3>
 
     <form method="get" action="meals/filter">
         <dl>
             <dt><spring:message code="meal.startDate"/>:</dt>
-            <dd><input type="date" name="startDate" value="${param.startDate}"></dd>
+            <dd><input type="date" name="startDate" value="${startDate}"></dd>
         </dl>
         <dl>
             <dt><spring:message code="meal.endDate"/>:</dt>
@@ -27,12 +30,13 @@
             <dt><spring:message code="meal.endTime"/>:</dt>
             <dd><input type="time" name="endTime" value="${param.endTime}"></dd>
         </dl>
-        <button type="submit"><spring:message code="meal.filter"/></button>
     </form>
+    <button onclick="getFiltered()"><spring:message code="meal.filter"/></button>
+    <button onclick="resetFilter()"><spring:message code="meal.reset"/></button>
     <hr>
-    <a href="meals/create"><spring:message code="meal.add"/></a>
+    <button onclick="add()"><spring:message code="meal.add"/></button>
     <hr>
-    <table border="1" cellpadding="8" cellspacing="0">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
             <th><spring:message code="meal.dateTime"/></th>
@@ -44,7 +48,7 @@
         </thead>
         <c:forEach items="${meals}" var="meal">
             <jsp:useBean id="meal" scope="page" type="ru.javawebinar.topjava.to.MealTo"/>
-            <tr data-mealExcess="${meal.excess}">
+            <tr data-mealExcess="${meal.excess}" id="${meal.id}">
                 <td>
                         <%--${meal.dateTime.toLocalDate()} ${meal.dateTime.toLocalTime()}--%>
                         <%--<%=TimeUtil.toString(meal.getDateTime())%>--%>
@@ -53,12 +57,50 @@
                 </td>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
-                <td><a href="meals/update?id=${meal.id}"><spring:message code="common.update"/></a></td>
-                <td><a href="meals/delete?id=${meal.id}"><spring:message code="common.delete"/></a></td>
+                <td><a><span class="fa fa-pencil"></span></a></td>
+                <td><a class="delete"><span class="fa fa-remove"></span></a></td>
             </tr>
         </c:forEach>
     </table>
 </section>
+<div class="modal" id="editRow">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mealModalLabel"><spring:message code="meal.add"/></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <%--    `meal.new` cause javax.el.ELException - bug tomcat --%>
+                <hr>
+                <form id="mealForm">
+                    <input type="hidden" name="id" value="0">
+                    <dl>
+                        <dt><spring:message code="meal.dateTime"/>:</dt>
+                        <dd><input type="datetime-local" value="meal.dateTime" name="dateTime" required></dd>
+                    </dl>
+                    <dl>
+                        <dt><spring:message code="meal.description"/>:</dt>
+                        <dd><input type="text" size=40 name="description" required></dd>
+                    </dl>
+                    <dl>
+                        <dt><spring:message code="meal.calories"/>:</dt>
+                        <dd><input type="number" name="calories" required></dd>
+                    </dl>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="save()"><spring:message
+                            code="common.save"/></button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><spring:message
+                            code="common.cancel"/></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>

@@ -1,6 +1,5 @@
 package ru.javawebinar.topjava;
 
-import ru.javawebinar.topjava.TestMatcher;
 import ru.javawebinar.topjava.model.Role;
 import ru.javawebinar.topjava.model.User;
 

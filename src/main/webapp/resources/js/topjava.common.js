@@ -1,36 +1,3 @@
-var form;
-
-function makeEditable() {
-    form = $('#detailsForm');
-    $(".delete").click(function () {
-        if (confirm('Are you sure?')) {
-            deleteRow($(this).attr("id"));
-        }
-    });
-
-    $(document).ajaxError(function (event, jqXHR, options, jsExc) {
-        failNoty(jqXHR);
-    });
-
-    // solve problem with cache in IE: https://stackoverflow.com/a/4303862/548473
-    $.ajaxSetup({cache: false});
-}
-
-function add() {
-    form.find(":input").val("");
-    $("#editRow").modal();
-}
-
-function deleteRow(id) {
-    $.ajax({
-        url: ctx.ajaxUrl + id,
-        type: "DELETE"
-    }).done(function () {
-        updateTable();
-        successNoty("Deleted");
-    });
-}
-
 function updateTable() {
     $.get(ctx.ajaxUrl, function (data) {
         ctx.datatableApi.clear().rows.add(data).draw();
@@ -46,6 +13,21 @@ function save() {
         $("#editRow").modal("hide");
         updateTable();
         successNoty("Saved");
+    });
+}
+
+function add() {
+    form.find(":input").val("");
+    $("#editRow").modal();
+}
+
+function deleteRow(id) {
+    $.ajax({
+        url: ctx.ajaxUrl + id,
+        type: "DELETE"
+    }).done(function () {
+        updateTable();
+        successNoty("Deleted");
     });
 }
 
@@ -75,4 +57,19 @@ function failNoty(jqXHR) {
         type: "error",
         layout: "bottomRight"
     }).show();
+}
+
+function makeEditable() {
+    $(".delete").click(function () {
+        if (confirm('Are you sure?')) {
+            deleteRow($(this).parent().parent().attr("id"));
+        }
+    });
+
+    $(document).ajaxError(function (event, jqXHR, options, jsExc) {
+        failNoty(jqXHR);
+    });
+
+    // solve problem with cache in IE: https://stackoverflow.com/a/4303862/548473
+    $.ajaxSetup({cache: false});
 }
